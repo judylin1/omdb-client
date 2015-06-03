@@ -8,7 +8,7 @@ document.body.appendChild(h1);
 //xhr.send
 
 var xhr = new XMLHttpRequest();
-xhr.open('get', 'http://omdbapi.com/?s=pizza');
+xhr.open('get', 'http://omdbapi.com/?s=pizza', true);
 xhr.addEventListener('load', function () {
 //.response is a string. want objects out of it by parsing
 var response = xhr.response;
@@ -18,7 +18,8 @@ for (var i = 0; i < responseData.Search.length; i++) {
 
   var a = document.createElement('a');
   a.innerHTML = responseData.Search[i].Title;
-  a.href= '/show.html?'
+  var imdbid = responseData.Search[i].imdbID;
+  a.href = 'show.html/?i=' + imdbid + "&plot=short&r=json";
 
   // <p><a href="/show.html?">Mystic Pizza</a></p>
 
