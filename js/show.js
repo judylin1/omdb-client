@@ -1,5 +1,6 @@
 var xhr = new XMLHttpRequest();
-  xhr.open('get', 'http://www.omdbapi.com/' + document.location.search, true);
+var x = 'http://www.omdbapi.com/' + document.location.search + "&plot=short&r=json";
+  xhr.open('get', x, true);
   xhr.addEventListener('load', function () {
   var response = xhr.response;
   var responseData = JSON.parse(response);
@@ -9,6 +10,6 @@ var xhr = new XMLHttpRequest();
 
     var year = document.getElementById('year');
     year.innerHTML = responseData.Year;
-    
+
   });
 xhr.send();

@@ -19,7 +19,7 @@ for (var i = 0; i < responseData.Search.length; i++) {
   var a = document.createElement('a');
   a.innerHTML = responseData.Search[i].Title;
   var imdbid = responseData.Search[i].imdbID;
-  a.href = 'show.html/?i=' + imdbid + "&plot=short&r=json";
+  a.href = 'show.html/?i=' + imdbid;
 
   // <p><a href="/show.html?">Mystic Pizza</a></p>
 
